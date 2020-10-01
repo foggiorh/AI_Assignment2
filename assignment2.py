@@ -310,7 +310,7 @@ def confusion_matrix(title, predicted, actual):
 groupa_hard_75, groupa_hard_75_train, groupa_hard_75_test, groupa_hard_75_out, train, test = normalize_and_train_hard(
     "Group A", df_a, 0.3, epsilon_a, max_iterations, .25)
 groupa_hard_25, groupa_hard_25_train, groupa_hard_25_test, groupa_hard_25_out, train, test = normalize_and_train_hard(
-    "Group A", df_a, 0.3, epsilon_a, max_iterations, .25)
+    "Group A", df_a, 0.3, epsilon_a, max_iterations, .75)
 pred, testOut = test_hard(
     groupa_hard_75, groupa_hard_75_test, groupa_hard_75_out)
 graph_results("[Training] Group A Hard Activation 75% Train, 25% Test, Alpha: 0.3",
