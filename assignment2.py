@@ -364,7 +364,7 @@ confusion_matrix(
 pred, testOut = test_hard(
     groupc_hard_25, groupc_hard_25_test, groupc_hard_25_out)
 graph_results("[Training] Group C Hard Activation 25% Train, 75% Test, Alpha: 0.3",
-              train, groupc_hard_75)
+              train, groupc_hard_25)
 graph_results("[Testing] Group C Hard Activation 25% Train, 75% Test, Alpha: 0.3",
               test, groupc_hard_25)
 confusion_matrix(
