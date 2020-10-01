@@ -387,7 +387,7 @@ pred, testOut = test_soft(
     groupa_soft_25, groupa_soft_25_test, groupa_soft_25_out, gainB_25)
 graph_results("[Training] Group A Soft Activation 25% Train, 75% Test, Alpha: 0.3, Gain: 0.2",
               train, groupa_hard_75)
-graph_results("[Training] Group A Soft Activation 25% Train, 75% Test, Alpha: 0.3, Gain: 0.2",
+graph_results("[Testing] Group A Soft Activation 25% Train, 75% Test, Alpha: 0.3, Gain: 0.2",
               test, groupa_soft_25)
 confusion_matrix(
     "Group A Soft Activation 25% Train, 75% Test, Alpha: 0.3, Gain: 0.2", pred, testOut)
