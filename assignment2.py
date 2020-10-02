@@ -39,6 +39,10 @@ c_25 = pd.read_csv("./splits/c_0.25.csv")
 c_75 = pd.read_csv("./splits/c_0.75.csv")
 c_25.columns = ['Price', 'Weight', 'Type']
 c_75.columns = ['Price', 'Weight', 'Type']
+alt_c_25 = pd.read_csv("./splits/alt_c_0.25.csv")
+alt_c_75 = pd.read_csv("./splits/alt_c_0.75.csv")
+alt_c_25.columns = ['Price', 'Weight', 'Type']
+alt_c_75.columns = ['Price', 'Weight', 'Type']
 
 
 def normalize_data(data):
@@ -203,8 +207,8 @@ def normalize_and_train_soft(dataset_name, test, train, alpha, epsilon, max_iter
     # output_arr = get_desired_out_array(scaled_data)
     # inputTrain, outputTrain, inputTest, outputTest = get_percent_train_and_test(
     #     input_arr, output_arr, perc)
-    scaled_train = normalize(train)
-    scaled_test = normalize(test)
+    scaled_train = normalize_data(train)
+    scaled_test = normalize_data(test)
 
     inputTrain = get_input_array(scaled_train)
     inputTest = get_input_array(scaled_test)
@@ -376,9 +380,9 @@ confusion_matrix(
 #     "Group B Hard Activation 25% Train, 75% Test, Alpha: 0.3", pred, testOut)
 
 groupc_hard_75, groupc_hard_75_train, groupc_hard_75_test, groupc_hard_75_out, train, test = normalize_and_train_hard(
-    "GroupC", df_c, 0.3, epsilon_c, max_iterations, .25)
+    "GroupC", c_25, c_75, 0.3, epsilon_c, max_iterations, .25)
 groupc_hard_25, groupc_hard_25_train, groupc_hard_25_test, groupc_hard_25_out, train, test = normalize_and_train_hard(
-    "GroupC", df_c, 0.3, epsilon_c, max_iterations, .75)
+    "GroupC", c_25, c_75, 0.3, epsilon_c, max_iterations, .75)
 pred, testOut = test_hard(
     groupc_hard_75, groupc_hard_75_test, groupc_hard_75_out)
 graph_results("[Training] Group C Hard Activation 75% Train, 25% Test, Alpha: 0.3",
@@ -439,9 +443,9 @@ confusion_matrix(
 #     "Group B Soft Activation 25% Train, 75% Test, Alpha: 0.3, Gain: 0.2", pred, testOut)
 
 groupc_soft_75, groupc_soft_75_train, groupc_soft_75_test, groupc_soft_75_out, gainC_75, train, test = normalize_and_train_soft(
-    "GroupC", df_c, 0.1, epsilon_c, max_iterations, .1, .25)
+    "GroupC", c_25, c_75, 0.1, epsilon_c, max_iterations, .1, .25)
 groupc_soft_25, groupc_soft_25_train, groupc_soft_25_test, groupc_soft_25_out, gainC_25, train, test = normalize_and_train_soft(
-    "GroupC", df_c, 0.1, epsilon_c, max_iterations, .1, .75)
+    "GroupC", c_25, c_75, 0.1, epsilon_c, max_iterations, .1, .75)
 pred, testOut = test_soft(
     groupc_soft_75, groupc_soft_75_test, groupc_soft_75_out, gainC_75)
 graph_results("[Training] Group C Soft Activation 75% Train, 25% Test, Alpha: 0.1, Gain: 0.1",
@@ -502,9 +506,9 @@ confusion_matrix(
     "Alt Data B Hard Activation 25% Train, 75% Test, Alpha: 0.3", pred, testOut)
 
 altc_hard_75, altc_hard_75_train, altc_hard_75_test, altc_hard_75_out, train, test = normalize_and_train_hard(
-    "Alt C", df_alt_c, 0.3, epsilon_c, max_iterations, .25)
+    "Alt C", alt_c_25, alt_c_75, 0.3, epsilon_c, max_iterations, .25)
 altc_hard_25, altc_hard_25_train, altc_hard_25_test, altc_hard_25_out, train, test = normalize_and_train_hard(
-    "Alt C", df_alt_c, 0.3, epsilon_c, max_iterations, .75)
+    "Alt C", alt_c_75, alt_c_25, 0.3, epsilon_c, max_iterations, .75)
 pred, testOut = test_hard(
     altc_hard_75, altc_hard_75_test, altc_hard_75_out)
 graph_results("[Training] Alt Data C Hard Activation 75% Train, 25% Test, Alpha: 0.3",
@@ -565,9 +569,9 @@ confusion_matrix(
     "Alt Data B Soft Activation 25% Train, 75% Test, Alpha: 0.3, Gain: 0.2", pred, testOut)
 
 altc_soft_75, altc_soft_75_train, altc_soft_75_test, altc_soft_75_out, gainC_75, train, test = normalize_and_train_soft(
-    "AltC", df_alt_c, 0.3, epsilon_c, max_iterations, .2, .25)
+    "AltC", alt_c_25, alt_c_75, 0.3, epsilon_c, max_iterations, .2, .25)
 altc_soft_25, altc_soft_25_train, altc_soft_25_test, altc_soft_25_out, gainC_25, train, test = normalize_and_train_soft(
-    "AltC", df_alt_c, 0.3, epsilon_c, max_iterations, .2, .75)
+    "AltC", alt_c_75, alt_c_25, 0.3, epsilon_c, max_iterations, .2, .75)
 pred, testOut = test_soft(
     altc_soft_75, altc_soft_75_test, altc_soft_75_out, gainC_75)
 graph_results("[Training] Alt Data C Soft Activation 75% Train, 25% Test, Alpha: 0.3, Gain: 0.2",
