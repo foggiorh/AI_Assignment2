@@ -155,17 +155,17 @@ def get_percent_train_and_test(input, output, percentage):
     return (percInput, percOutput, percTestIn, percTestOut)
 
 
-# def get_random_sample(data, percent, name):
-#     train, test = train_test_split(data, test_size=percent, shuffle=True)
-#     train.to_csv('splits/' + name + str(1 - percent))
-#     test.to_csv('splits/' + name + str(percent))
-#     train_in = get_input_array(train)
-#     train_out = get_desired_out_array(train)
-#     test_in = get_input_array(test)
-#     test_out = get_desired_out_array(test)
-#     return train, test, train_in, train_out, test_in, test_out
+def get_random_sample(data, percent, name):
+    train, test = train_test_split(data, test_size=percent, shuffle=True)
+    train.to_csv('splits/' + name + str(1 - percent), index = False)
+    test.to_csv('splits/' + name + str(percent), index = False)
+    train_in = get_input_array(train)
+    train_out = get_desired_out_array(train)
+    test_in = get_input_array(test)
+    test_out = get_desired_out_array(test)
+    return train, test, train_in, train_out, test_in, test_out
 
-# get_random_sample(df_alt_c, 0.75, 'alt_c_')
+get_random_sample(df_c, 0.75, 'c_')
 
 
 def normalize_and_train_hard(dataset_name, data, alpha, epsilon, max_iterations, perc):
