@@ -20,18 +20,21 @@ epsilon_alt_c = 700
 alpha = 0.1  # 0.1
 
 # Read Datasets
-df_a = pd.read_csv("data_A.csv")
-df_a.columns = ['Price', 'Weight', 'Type']
-df_b = pd.read_csv("data_B.csv")
-df_b.columns = ['Price', 'Weight', 'Type']
-df_c = pd.read_csv("data_C.csv")
-df_c.columns = ['Price', 'Weight', 'Type']
-df_alt_a = pd.read_csv("data_ALT_A.csv")
-df_alt_a.columns = ['Price', 'Weight', 'Type']
-df_alt_b = pd.read_csv("data_ALT_B.csv")
-df_alt_b.columns = ['Price', 'Weight', 'Type']
-df_alt_c = pd.read_csv("data_ALT_C.csv")
-df_alt_c.columns = ['Price', 'Weight', 'Type']
+a_25 = pd.read_csv("./splits/a_0.25.csv")
+a_75 = pd.read_csv("./splits/a_0.75.csv")
+a_25.columns = ['Price', 'Weight', 'Type']
+a_75.columns = ['Price', 'Weight', 'Type']
+# df_a.columns = ['Price', 'Weight', 'Type']
+# df_b = pd.read_csv("data_B.csv")
+# df_b.columns = ['Price', 'Weight', 'Type']
+# df_c = pd.read_csv("data_C.csv")
+# df_c.columns = ['Price', 'Weight', 'Type']
+# df_alt_a = pd.read_csv("data_ALT_A.csv")
+# df_alt_a.columns = ['Price', 'Weight', 'Type']
+# df_alt_b = pd.read_csv("data_ALT_B.csv")
+# df_alt_b.columns = ['Price', 'Weight', 'Type']
+# df_alt_c = pd.read_csv("data_ALT_C.csv")
+# df_alt_c.columns = ['Price', 'Weight', 'Type']
 
 
 def normalize_data(data):
@@ -155,47 +158,62 @@ def get_percent_train_and_test(input, output, percentage):
     return (percInput, percOutput, percTestIn, percTestOut)
 
 
-def get_random_sample(data, percent, name):
-    train, test = train_test_split(data, test_size=percent, shuffle=True)
-    train.to_csv('splits/' + name + str(1 - percent), index = False)
-    test.to_csv('splits/' + name + str(percent), index = False)
-    train_in = get_input_array(train)
-    train_out = get_desired_out_array(train)
-    test_in = get_input_array(test)
-    test_out = get_desired_out_array(test)
-    return train, test, train_in, train_out, test_in, test_out
+# def get_random_sample(data, percent, name):
+#     train, test = train_test_split(data, test_size=percent, shuffle=True)
+#     train.to_csv('splits/' + name + str(1 - percent), index = False)
+#     test.to_csv('splits/' + name + str(percent), index = False)
+#     train_in = get_input_array(train)
+#     train_out = get_desired_out_array(train)
+#     test_in = get_input_array(test)
+#     test_out = get_desired_out_array(test)
+#     return train, test, train_in, train_out, test_in, test_out
 
-get_random_sample(df_c, 0.75, 'c_')
+# get_random_sample(df_c, 0.75, 'c_')
 
 
-def normalize_and_train_hard(dataset_name, data, alpha, epsilon, max_iterations, perc):
-    scaled_data = normalize_data(data)
+def normalize_and_train_hard(dataset_name, test, train, alpha, epsilon, max_iterations, perc):
+    # scaled_data = normalize_data(data)
     # input_arr = get_input_array(scaled_data)
     # output_arr = get_desired_out_array(scaled_data)
     # inputTrain, outputTrain, inputTest, outputTest = get_percent_train_and_test(
     #     input_arr, output_arr, perc)
-    train, test, inputTrain, outputTrain, inputTest, outputTest = get_random_sample(
-        scaled_data, perc)
+    scaled_train = normalize_data(train)
+    scaled_test = normalize_data(test)
+
+    inputTrain = get_input_array(scaled_train)
+    inputTest = get_input_array(scaled_test)
+    outputTrain = get_desired_out_array(scaled_train)
+    outputTest = get_desired_out_array(scaled_test)
+    # train, test, inputTrain, outputTrain, inputTest, outputTest = get_random_sample(
+    #     scaled_data, perc)
     result_weights, training_error = train_hard(
         inputTrain, outputTrain, alpha, epsilon, max_iterations)
     print("%s Final Weights: %s Train_Error: %f" %
           (dataset_name, str(result_weights), training_error))
-    return result_weights, inputTrain, inputTest, outputTest, train, test
+    return result_weights, inputTrain, inputTest, outputTest, scaled_train, scaled_test
 
 
-def normalize_and_train_soft(dataset_name, data, alpha, epsilon, max_iterations, gain, perc):
-    scaled_data = normalize_data(data)
+def normalize_and_train_soft(dataset_name, test, train, alpha, epsilon, max_iterations, gain, perc):
+    # scaled_data = normalize_data(data)
     # input_arr = get_input_array(scaled_data)
     # output_arr = get_desired_out_array(scaled_data)
     # inputTrain, outputTrain, inputTest, outputTest = get_percent_train_and_test(
     #     input_arr, output_arr, perc)
-    train, test, inputTrain, outputTrain, inputTest, outputTest = get_random_sample(
-        scaled_data, perc)
+    scaled_train = normalize(train)
+    scaled_test = normalize(test)
+
+    inputTrain = get_input_array(scaled_train)
+    inputTest = get_input_array(scaled_test)
+    outputTrain = get_desired_out_array(scaled_train)
+    outputTest = get_desired_out_array(scaled_test)
+
+    # train, test, inputTrain, outputTrain, inputTest, outputTest = get_random_sample(
+    #     scaled_data, perc)
     result_weights, training_error = train_soft(
         inputTrain, outputTrain, alpha, epsilon, max_iterations, gain)
     print("%s Final Weights: %s Train_Error: %f" %
           (dataset_name, str(result_weights), training_error))
-    return result_weights, inputTrain, inputTest, outputTest, gain, train, test,
+    return result_weights, inputTrain, inputTest, outputTest, gain, scaled_train, scaled_test,
 
 
 def test_hard(weights, testIn, testOut):
@@ -311,26 +329,26 @@ def confusion_matrix(title, predicted, actual):
     # plt.close()
 
 
-# groupa_hard_75, groupa_hard_75_train, groupa_hard_75_test, groupa_hard_75_out, train, test = normalize_and_train_hard(
-#     "Group A", df_a, 0.3, epsilon_a, max_iterations, .25)
-# groupa_hard_25, groupa_hard_25_train, groupa_hard_25_test, groupa_hard_25_out, train, test = normalize_and_train_hard(
-#     "Group A", df_a, 0.3, epsilon_a, max_iterations, .75)
-# pred, testOut = test_hard(
-#     groupa_hard_75, groupa_hard_75_test, groupa_hard_75_out)
-# graph_results("[Training] Group A Hard Activation 75% Train, 25% Test, Alpha: 0.3",
-#               train, groupa_hard_75)
-# graph_results("[Testing] Group A Hard Activation 75% Train, 25% Test, Alpha: 0.3",
-#               test, groupa_hard_75)
-# confusion_matrix(
-#     "Group A Hard Activation 75% Train, 25% Test, Alpha: 0.3", pred, testOut)
-# pred, testOut = test_hard(
-#     groupa_hard_25, groupa_hard_25_test, groupa_hard_25_out)
-# graph_results("[Training] Group A Hard Activation 25% Train, 75% Test, Alpha: 0.3",
-#               train, groupa_hard_25)
-# graph_results("[Testing] Group A Hard Activation 25% Train, 75% Test, Alpha: 0.3",
-#               test, groupa_hard_25)
-# confusion_matrix(
-#     "Group A Hard Activation 25% Train, 75% Test, Alpha: 0.3", pred, testOut)
+groupa_hard_75, groupa_hard_75_train, groupa_hard_75_test, groupa_hard_75_out, train, test = normalize_and_train_hard(
+    "Group A", a_25, a_75, 0.3, epsilon_a, max_iterations, .25)
+groupa_hard_25, groupa_hard_25_train, groupa_hard_25_test, groupa_hard_25_out, train, test = normalize_and_train_hard(
+    "Group A", a_75, a_25, 0.3, epsilon_a, max_iterations, .75)
+pred, testOut = test_hard(
+    groupa_hard_75, groupa_hard_75_test, groupa_hard_75_out)
+graph_results("[Training] Group A Hard Activation 75% Train, 25% Test, Alpha: 0.3",
+              train, groupa_hard_75)
+graph_results("[Testing] Group A Hard Activation 75% Train, 25% Test, Alpha: 0.3",
+              test, groupa_hard_75)
+confusion_matrix(
+    "Group A Hard Activation 75% Train, 25% Test, Alpha: 0.3", pred, testOut)
+pred, testOut = test_hard(
+    groupa_hard_25, groupa_hard_25_test, groupa_hard_25_out)
+graph_results("[Training] Group A Hard Activation 25% Train, 75% Test, Alpha: 0.3",
+              train, groupa_hard_25)
+graph_results("[Testing] Group A Hard Activation 25% Train, 75% Test, Alpha: 0.3",
+              test, groupa_hard_25)
+confusion_matrix(
+    "Group A Hard Activation 25% Train, 75% Test, Alpha: 0.3", pred, testOut)
 
 # groupb_hard_75, groupb_hard_75_train, groupb_hard_75_test, groupb_hard_75_out, train, test = normalize_and_train_hard(
 #     "Group B", df_b, 0.3, epsilon_b, max_iterations, .25)
