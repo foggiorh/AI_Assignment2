@@ -35,6 +35,10 @@ a_75.columns = ['Price', 'Weight', 'Type']
 # df_alt_b.columns = ['Price', 'Weight', 'Type']
 # df_alt_c = pd.read_csv("data_ALT_C.csv")
 # df_alt_c.columns = ['Price', 'Weight', 'Type']
+c_25 = pd.read_csv("./splits/c_0.25.csv")
+c_75 = pd.read_csv("./splits/c_0.75.csv")
+c_25.columns = ['Price', 'Weight', 'Type']
+c_75.columns = ['Price', 'Weight', 'Type']
 
 
 def normalize_data(data):
@@ -328,7 +332,6 @@ def confusion_matrix(title, predicted, actual):
     # plt.savefig(filename)
     # plt.close()
 
-<<<<<<< HEAD
 
 groupa_hard_75, groupa_hard_75_train, groupa_hard_75_test, groupa_hard_75_out, train, test = normalize_and_train_hard(
     "Group A", a_25, a_75, 0.3, epsilon_a, max_iterations, .25)
@@ -350,28 +353,6 @@ graph_results("[Testing] Group A Hard Activation 25% Train, 75% Test, Alpha: 0.3
               test, groupa_hard_25)
 confusion_matrix(
     "Group A Hard Activation 25% Train, 75% Test, Alpha: 0.3", pred, testOut)
-=======
-# groupa_hard_75, groupa_hard_75_train, groupa_hard_75_test, groupa_hard_75_out, train, test = normalize_and_train_hard(
-#     "Group A", df_a, 0.3, epsilon_a, max_iterations, .25)
-# groupa_hard_25, groupa_hard_25_train, groupa_hard_25_test, groupa_hard_25_out, train, test = normalize_and_train_hard(
-#     "Group A", df_a, 0.3, epsilon_a, max_iterations, .75)
-# pred, testOut = test_hard(
-#     groupa_hard_75, groupa_hard_75_test, groupa_hard_75_out)
-# graph_results("[Training] Group A Hard Activation 75% Train, 25% Test, Alpha: 0.3",
-#               train, groupa_hard_75)
-# graph_results("[Testing] Group A Hard Activation 75% Train, 25% Test, Alpha: 0.3",
-#               test, groupa_hard_75)
-# confusion_matrix(
-#     "Group A Hard Activation 75% Train, 25% Test, Alpha: 0.3", pred, testOut)
-# pred, testOut = test_hard(
-#     groupa_hard_25, groupa_hard_25_test, groupa_hard_25_out)
-# graph_results("[Training] Group A Hard Activation 25% Train, 75% Test, Alpha: 0.3",
-#               train, groupa_hard_25)
-# graph_results("[Testing] Group A Hard Activation 25% Train, 75% Test, Alpha: 0.3",
-#               test, groupa_hard_25)
-# confusion_matrix(
-#     "Group A Hard Activation 25% Train, 75% Test, Alpha: 0.3", pred, testOut)
->>>>>>> d76fa4e861fd84d9441f603cef829868a71557d3
 
 # groupb_hard_75, groupb_hard_75_train, groupb_hard_75_test, groupb_hard_75_out, train, test = normalize_and_train_hard(
 #     "Group B", df_b, 0.3, epsilon_b, max_iterations, .25)
@@ -603,4 +584,3 @@ graph_results("[Testing] Alt Data C Soft Activation 25% Train, 25% Test, Alpha: 
               test, altc_soft_25)
 confusion_matrix(
     "Alt Data C Soft Activation 25% Train, 75% Test, Alpha: 0.3, Gain: 0.2", pred, testOut)
-
