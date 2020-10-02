@@ -359,6 +359,7 @@ def confusion_matrix(title, predicted, actual):
 # confusion_matrix(
 #     "Group A Hard Activation 25% Train, 75% Test, Alpha: 0.3", pred, testOut)
 
+<<<<<<< Updated upstream
 # groupb_hard_75, groupb_hard_75_train, groupb_hard_75_test, groupb_hard_75_out, train, test = normalize_and_train_hard(
 #     "Group B", b_25, b_75, 0.3, epsilon_b, max_iterations, .25)
 # groupb_hard_25, groupb_hard_25_train, groupb_hard_25_test, groupb_hard_25_out, train, test = normalize_and_train_hard(
@@ -379,6 +380,28 @@ def confusion_matrix(title, predicted, actual):
 #               test, groupb_hard_25)
 # confusion_matrix(
 #     "Group B Hard Activation 25% Train, 75% Test, Alpha: 0.3", pred, testOut)
+=======
+groupb_hard_75, groupb_hard_75_train, groupb_hard_75_test, groupb_hard_75_out, train, test = normalize_and_train_hard(
+    "Group B", b_25, b_75, 0.3, epsilon_b, max_iterations, .75)
+groupb_hard_25, groupb_hard_25_train, groupb_hard_25_test, groupb_hard_25_out, train, test = normalize_and_train_hard(
+    "Group B", b_75, b_25, 0.3, epsilon_b, max_iterations, .25)
+pred, testOut = test_hard(
+    groupb_hard_75, groupb_hard_75_test, groupb_hard_75_out)
+graph_results("[Training] Group B Hard Activation 75% Train, 25% Test, Alpha: 0.3",
+              train, groupb_hard_75)
+graph_results("[Testing] Group B Hard Activation 75% Train, 25% Test, Alpha: 0.3",
+              test, groupb_hard_75)
+confusion_matrix(
+    "Group B Hard Activation 75% Train, 25% Test, Alpha: 0.3", pred, testOut)
+pred, testOut = test_hard(
+    groupb_hard_25, groupb_hard_25_test, groupb_hard_25_out)
+graph_results("[Training] Group B Hard Activation 25% Train, 75% Test, Alpha: 0.3",
+              train, groupb_hard_25)
+graph_results("[Testing] Group B Hard Activation 25% Train, 75% Test, Alpha: 0.3",
+              test, groupb_hard_25)
+confusion_matrix(
+    "Group B Hard Activation 25% Train, 75% Test, Alpha: 0.3", pred, testOut)
+>>>>>>> Stashed changes
 
 # groupc_hard_75, groupc_hard_75_train, groupc_hard_75_test, groupc_hard_75_out, train, test = normalize_and_train_hard(
 #     "GroupC", c_25, c_75, 0.3, epsilon_c, max_iterations, .25)
@@ -552,6 +575,30 @@ def confusion_matrix(title, predicted, actual):
 #     "AltA", a_alt_25, a_alt_75, 0.3, epsilon_a, max_iterations, .2, .25)
 # alta_soft_25, alta_soft_25_train, alta_soft_25_test, alta_soft_25_out, gainB_25, train, test = normalize_and_train_soft(
 #     "AltA", a_alt_25, a_alt_75, 0.3, epsilon_a, max_iterations, .2, .75)
+<<<<<<< Updated upstream
+=======
+# pred, testOut = test_soft(
+#     alta_soft_75, alta_soft_75_test, alta_soft_75_out, gainA_75)
+# graph_results("[Training] Alt Data A Soft Activation 75% Train, 25% Test, Alpha: 0.3, Gain: 0.2",
+#               train, alta_soft_75)
+# graph_results("[Testing] Alt Data A Soft Activation 75% Train, 25% Test, Alpha: 0.3, Gain: 0.2",
+#               test, alta_soft_75)
+# confusion_matrix(
+#     "Alt Data A Soft Activation 75% Train, 25% Test, Alpha: 0.3, Gain: 0.2", pred, testOut)
+# pred, testOut = test_soft(
+#     alta_soft_25, alta_soft_25_test, alta_soft_25_out, gainB_25)
+# graph_results("[Training] Alt Data A Soft Activation 25% Train, 75% Test, Alpha: 0.3, Gain: 0.2",
+#               train, alta_soft_25)
+# graph_results("[Testing] Alt Data A Soft Activation 25% Train, 75% Test, Alpha: 0.3, Gain: 0.2",
+#               test, alta_soft_25)
+# confusion_matrix(
+#     "Alt Data A Soft Activation 25% Train, 75% Test, Alpha: 0.3, Gain: 0.2", pred, testOut)
+
+# altb_soft_75, altb_soft_75_train, altb_soft_75_test, altb_soft_75_out, gainB_75, train, test = normalize_and_train_soft(
+#     "AltB", df_alt_b, 0.3, epsilon_b, max_iterations, .2, .25)
+# altb_soft_25, altb_soft_25_train, altb_soft_25_test, altb_soft_25_out, gainB_25, train, test = normalize_and_train_soft(
+#     "AltB", df_alt_b, 0.3, epsilon_b, max_iterations, .2, .75)
+>>>>>>> Stashed changes
 # pred, testOut = test_soft(
 #     alta_soft_75, alta_soft_75_test, alta_soft_75_out, gainA_75)
 # graph_results("[Training] Alt Data A Soft Activation 75% Train, 25% Test, Alpha: 0.3, Gain: 0.2",
