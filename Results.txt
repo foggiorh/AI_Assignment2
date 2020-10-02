@@ -15,10 +15,10 @@ accuracy 75: 66.900000, tp_perc: 82.862903, fp_perc: 48.809524, tn_perc: 51.1904
 accuracy 25: 71.666667, tp_perc: 77.992021, fp_perc: 34.692513, tn_perc: 65.307487, fn_perc: 22.007979, error: 28.333333 
 
 Alpha: 0.3
-GroupC Final Weights: [0.19516306059472702, -0.5108962125275485, -0.13245881153967348] Train_Error: 1460.000000
-GroupC Final Weights: [-0.05130733196812562, -0.49136767437661516, 0.03766502608453981] Train_Error: 1478.000000
-accuracy: 50.000000, tp_perc: 99.601594, fp_perc: 100.000000, tn_perc: 0.000000, fn_perc: 0.398406, error: 50.000000
-accuracy: 49.500000, tp_perc: 98.406375, fp_perc: 99.799197, tn_perc: 0.200803, fn_perc: 1.593625, error: 50.500000
+GroupC 75 Final Weights: [0.19516306059472702, -0.5108962125275485, -0.13245881153967348] Train_Error: 1460.000000
+GroupC 25 Final Weights: [0.30162643818613993, -0.08247964348837969, 0.2699789468977721] Train_Error: 530.000000
+accuracy 75 : 50.000000, tp_perc: 99.601594, fp_perc: 100.000000, tn_perc: 0.000000, fn_perc: 0.398406, error: 50.000000
+accuracy 25 : 50.066667, tp_perc: 0.000000, fp_perc: 0.000000, tn_perc: 100.000000, fn_perc: 100.000000, error: 49.933333 
 
 Group Dataset Soft:
 
