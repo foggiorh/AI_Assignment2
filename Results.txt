@@ -15,10 +15,10 @@ accuracy: 71.700000, tp_perc: 75.941423, fp_perc: 32.183908, tn_perc: 67.816092,
 accuracy: 59.033333, tp_perc: 87.624750, fp_perc: 69.672679, tn_perc: 30.327321, fn_perc: 12.375250, error: 40.966667
 
 Alpha: 0.3
-GroupC Final Weights: [-0.33812849337547235, 0.5507490639910401, 0.051989542225458596] Train_Error: 1480.000000
-need 25 c
-accuracy: 47.600000, tp_perc: 10.364683, fp_perc: 11.899791, tn_perc: 88.100209, fn_perc: 89.635317, error: 52.400000
-need 25 c
+GroupC Final Weights: [0.19516306059472702, -0.5108962125275485, -0.13245881153967348] Train_Error: 1460.000000
+GroupC Final Weights: [-0.05130733196812562, -0.49136767437661516, 0.03766502608453981] Train_Error: 1478.000000
+accuracy: 50.000000, tp_perc: 99.601594, fp_perc: 100.000000, tn_perc: 0.000000, fn_perc: 0.398406, error: 50.000000
+accuracy: 49.500000, tp_perc: 98.406375, fp_perc: 99.799197, tn_perc: 0.200803, fn_perc: 1.593625, error: 50.500000
 
 Group Dataset Soft:
 
@@ -35,10 +35,10 @@ accuracy: 72.100000, tp_perc: 79.457364, fp_perc: 35.743802, tn_perc: 64.256198,
 accuracy: 71.866667, tp_perc: 72.579553, fp_perc: 28.824688, tn_perc: 71.175312, fn_perc: 27.420447, error: 28.133333
 
 Alpha: 0.1 Gain 0.1
-need 75
-GroupC Final Weights: [-3.3307733755310815, -0.6844155021402474, 2.0118182085211314] Train_Error: 751.488715
-need 75
-accuracy: 53.000000, tp_perc: 47.117296, fp_perc: 41.046278, tn_perc: 58.953722, fn_perc: 52.882704, error: 47.000000
+GroupC Final Weights: [-3.424877277982128, -1.6758567734977832, 2.1672064469819112] Train_Error: 750.180790
+GroupC Final Weights: [-3.424877277982128, -1.6758567734977832, 2.1672064469819112] Train_Error: 750.180790
+accuracy: 52.300000, tp_perc: 70.119522, fp_perc: 65.662651, tn_perc: 34.337349, fn_perc: 29.880478, error: 47.700000
+accuracy: 52.300000, tp_perc: 70.119522, fp_perc: 65.662651, tn_perc: 34.337349, fn_perc: 29.880478, error: 47.700000
 
 Alt Data Hard:
 
@@ -55,10 +55,10 @@ accuracy: 99.200000, tp_perc: 98.973306, fp_perc: 0.584795, tn_perc: 99.415205, 
 accuracy: 96.466667, tp_perc: 99.801718, fp_perc: 6.926698, tn_perc: 93.073302, fn_perc: 0.198282, error: 3.533333
 
 Alpha: 0.3 Gain 0.2
-Alt C Final Weights: [-1.324182041139905, -0.6589953153146119, 0.9144595671644971] Train_Error: 1101.000000
-Alt C Final Weights: [-1.1974094212192592, -1.1031662078708513, 0.7835477834767444] Train_Error: 383.000000
-accuracy: 71.700000, tp_perc: 83.983573, fp_perc: 39.961014, tn_perc: 60.038986, fn_perc: 16.016427, error: 28.300000
-accuracy: 57.300000, tp_perc: 98.479841, fp_perc: 84.599866, tn_perc: 15.400134, fn_perc: 1.520159, error: 42.700000
+Alt C Final Weights: [-1.3232661131898518, -0.6001610958582221, 1.1044032294587192] Train_Error: 1118.000000
+Alt C Final Weights: [-0.8496416888740337, -0.8500944322990185, 1.451889931630355] Train_Error: 384.000000
+accuracy: 70.800000, tp_perc: 57.884232, fp_perc: 16.232465, tn_perc: 83.767535, fn_perc: 42.115768, error: 29.200000
+accuracy: 50.066667, tp_perc: 0.066711, fp_perc: 0.000000, tn_perc: 100.000000, fn_perc: 99.933289, error: 49.933333
 
 Alt Data Soft:
 
@@ -75,8 +75,8 @@ accuracy: 98.900000, tp_perc: 99.425287, fp_perc: 1.673640, tn_perc: 98.326360, 
 accuracy: 98.700000, tp_perc: 98.803987, fp_perc: 1.404682, tn_perc: 98.595318, fn_perc: 1.196013
 
 Alpha: 0.3 Gain 0.2
-AltC Final Weights: [-39.289681024310006, -24.184130880706842, 31.68533214547427]
-AltC Final Weights: [-6.596960807138627, -3.110211142935041, 4.920814897700859]
-accuracy: 74.500000, tp_perc: 75.239923, fp_perc: 26.304802, tn_perc: 73.695198, fn_perc: 24.760077
-accuracy: 72.733333, tp_perc: 70.761015, fp_perc: 25.299601, tn_perc: 74.700399, fn_perc: 29.238985
+AltC Final Weights: [-36.77225403694698, -21.3438953992322, 30.08256554073538] Train_Error: 557.504019
+AltC Final Weights: [-5.708350789813962, -3.318438556277657, 6.657800461091034] Train_Error: 237.229658
+accuracy: 73.400000, tp_perc: 77.045908, fp_perc: 30.260521, tn_perc: 69.739479, fn_perc: 22.954092, error: 26.600000
+accuracy: 51.700000, tp_perc: 3.468979, fp_perc: 0.133245, tn_perc: 99.866755, fn_perc: 96.531021, error: 48.300000
 

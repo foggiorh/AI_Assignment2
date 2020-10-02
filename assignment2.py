@@ -89,7 +89,7 @@ def train_hard(input_arr, desired_out, alpha, epsilon, max_iterations):
     y_w = random.uniform(-.5, .5)
     x_w = random.uniform(-.5, .5)
     b = random.uniform(-.5, .5)
-    #weights = [-.5, -.5, .5]
+    # weights = [-.5, -.5, .5]
     weights = [y_w, x_w, b]
     original_weights = weights
     train_error = 0
@@ -117,7 +117,7 @@ def train_soft(input_arr, desired_out, alpha, epsilon, max_iterations, gain):
     y_w = random.uniform(-.5, .5)
     x_w = random.uniform(-.5, .5)
     b = random.uniform(-.5, .5)
-    #weights = [-.5, -.5, .5]
+    # weights = [-.5, -.5, .5]
     weights = [y_w, x_w, b]
     original_weights = weights
     train_error = 0
@@ -337,26 +337,26 @@ def confusion_matrix(title, predicted, actual):
     # plt.close()
 
 
-groupa_hard_75, groupa_hard_75_train, groupa_hard_75_test, groupa_hard_75_out, train, test = normalize_and_train_hard(
-    "Group A", a_25, a_75, 0.3, epsilon_a, max_iterations, .25)
-groupa_hard_25, groupa_hard_25_train, groupa_hard_25_test, groupa_hard_25_out, train, test = normalize_and_train_hard(
-    "Group A", a_75, a_25, 0.3, epsilon_a, max_iterations, .75)
-pred, testOut = test_hard(
-    groupa_hard_75, groupa_hard_75_test, groupa_hard_75_out)
-graph_results("[Training] Group A Hard Activation 75% Train, 25% Test, Alpha: 0.3",
-              train, groupa_hard_75)
-graph_results("[Testing] Group A Hard Activation 75% Train, 25% Test, Alpha: 0.3",
-              test, groupa_hard_75)
-confusion_matrix(
-    "Group A Hard Activation 75% Train, 25% Test, Alpha: 0.3", pred, testOut)
-pred, testOut = test_hard(
-    groupa_hard_25, groupa_hard_25_test, groupa_hard_25_out)
-graph_results("[Training] Group A Hard Activation 25% Train, 75% Test, Alpha: 0.3",
-              train, groupa_hard_25)
-graph_results("[Testing] Group A Hard Activation 25% Train, 75% Test, Alpha: 0.3",
-              test, groupa_hard_25)
-confusion_matrix(
-    "Group A Hard Activation 25% Train, 75% Test, Alpha: 0.3", pred, testOut)
+# groupa_hard_75, groupa_hard_75_train, groupa_hard_75_test, groupa_hard_75_out, train, test = normalize_and_train_hard(
+#     "Group A", a_25, a_75, 0.3, epsilon_a, max_iterations, .25)
+# groupa_hard_25, groupa_hard_25_train, groupa_hard_25_test, groupa_hard_25_out, train, test = normalize_and_train_hard(
+#     "Group A", a_75, a_25, 0.3, epsilon_a, max_iterations, .75)
+# pred, testOut = test_hard(
+#     groupa_hard_75, groupa_hard_75_test, groupa_hard_75_out)
+# graph_results("[Training] Group A Hard Activation 75% Train, 25% Test, Alpha: 0.3",
+#               train, groupa_hard_75)
+# graph_results("[Testing] Group A Hard Activation 75% Train, 25% Test, Alpha: 0.3",
+#               test, groupa_hard_75)
+# confusion_matrix(
+#     "Group A Hard Activation 75% Train, 25% Test, Alpha: 0.3", pred, testOut)
+# pred, testOut = test_hard(
+#     groupa_hard_25, groupa_hard_25_test, groupa_hard_25_out)
+# graph_results("[Training] Group A Hard Activation 25% Train, 75% Test, Alpha: 0.3",
+#               train, groupa_hard_25)
+# graph_results("[Testing] Group A Hard Activation 25% Train, 75% Test, Alpha: 0.3",
+#               test, groupa_hard_25)
+# confusion_matrix(
+#     "Group A Hard Activation 25% Train, 75% Test, Alpha: 0.3", pred, testOut)
 
 # groupb_hard_75, groupb_hard_75_train, groupb_hard_75_test, groupb_hard_75_out, train, test = normalize_and_train_hard(
 #     "Group B", df_b, 0.3, epsilon_b, max_iterations, .25)
@@ -463,47 +463,47 @@ graph_results("[Testing] Group C Soft Activation 25% Train, 75% Test, Alpha: 0.1
 confusion_matrix(
     "Group C Soft Activation 25% Train, 75% Test, Alpha: 0.1, Gain: 0.1", pred, testOut)
 
-alta_hard_75, alta_hard_75_train, alta_hard_75_test, alta_hard_75_out, train, test = normalize_and_train_hard(
-    "Alt A", df_alt_a, 0.3, epsilon_a, max_iterations, .25)
-alta_hard_25, alta_hard_25_train, alta_hard_25_test, alta_hard_25_out, train, test = normalize_and_train_hard(
-    "Alt A", df_alt_a, 0.3, epsilon_a, max_iterations, .75)
-pred, testOut = test_hard(
-    alta_hard_75, alta_hard_75_test, alta_hard_75_out)
-graph_results("[Training] Alt Data A Hard Activation 75% Train, 25% Test, Alpha: 0.3",
-              train, alta_hard_75)
-graph_results("[Testing] Alt Data A Hard Activation 75% Train, 25% Test, Alpha: 0.3",
-              test, alta_hard_75)
-confusion_matrix(
-    "Alt Data A Hard Activation 75% Train, 25% Test, Alpha: 0.3", pred, testOut)
-pred, testOut = test_hard(
-    alta_hard_25, alta_hard_25_test, alta_hard_25_out)
-graph_results("[Training] Alt Data A Hard Activation 25% Train, 75% Test, Alpha: 0.3",
-              train, alta_hard_25)
-graph_results("[Testing] Alt Data A Hard Activation 25% Train, 75% Test, Alpha: 0.3",
-              test, alta_hard_25)
-confusion_matrix(
-    "Alt Data A Hard Activation 25% Train, 75% Test, Alpha: 0.3", pred, testOut)
+# alta_hard_75, alta_hard_75_train, alta_hard_75_test, alta_hard_75_out, train, test = normalize_and_train_hard(
+#     "Alt A", df_alt_a, 0.3, epsilon_a, max_iterations, .25)
+# alta_hard_25, alta_hard_25_train, alta_hard_25_test, alta_hard_25_out, train, test = normalize_and_train_hard(
+#     "Alt A", df_alt_a, 0.3, epsilon_a, max_iterations, .75)
+# pred, testOut = test_hard(
+#     alta_hard_75, alta_hard_75_test, alta_hard_75_out)
+# graph_results("[Training] Alt Data A Hard Activation 75% Train, 25% Test, Alpha: 0.3",
+#               train, alta_hard_75)
+# graph_results("[Testing] Alt Data A Hard Activation 75% Train, 25% Test, Alpha: 0.3",
+#               test, alta_hard_75)
+# confusion_matrix(
+#     "Alt Data A Hard Activation 75% Train, 25% Test, Alpha: 0.3", pred, testOut)
+# pred, testOut = test_hard(
+#     alta_hard_25, alta_hard_25_test, alta_hard_25_out)
+# graph_results("[Training] Alt Data A Hard Activation 25% Train, 75% Test, Alpha: 0.3",
+#               train, alta_hard_25)
+# graph_results("[Testing] Alt Data A Hard Activation 25% Train, 75% Test, Alpha: 0.3",
+#               test, alta_hard_25)
+# confusion_matrix(
+#     "Alt Data A Hard Activation 25% Train, 75% Test, Alpha: 0.3", pred, testOut)
 
-altb_hard_75, altb_hard_75_train, altb_hard_75_test, altb_hard_75_out, train, test = normalize_and_train_hard(
-    "Alt B", df_alt_b, 0.3, epsilon_b, max_iterations, .25)
-altb_hard_25, altb_hard_25_train, altb_hard_25_test, altb_hard_25_out, train, test = normalize_and_train_hard(
-    "Alt B", df_alt_b, 0.3, epsilon_b, max_iterations, .75)
-pred, testOut = test_hard(
-    altb_hard_75, altb_hard_75_test, altb_hard_75_out)
-graph_results("[Training] Alt Data B Hard Activation 75% Train, 25% Test, Alpha: 0.3",
-              train, altb_hard_75)
-graph_results("[Testing] Alt Data B Hard Activation 75% Train, 25% Test, Alpha: 0.3",
-              test, altb_hard_75)
-confusion_matrix(
-    "Alt Data B Hard Activation 75% Train, 25% Test, Alpha: 0.3", pred, testOut)
-pred, testOut = test_hard(
-    altb_hard_25, altb_hard_25_test, altb_hard_25_out)
-graph_results("[Training] Alt Data B Hard Activation 25% Train, 75% Test, Alpha: 0.3",
-              train, altb_hard_25)
-graph_results("[Testing] Alt Data B Hard Activation 25% Train, 75% Test, Alpha: 0.3",
-              test, altb_hard_25)
-confusion_matrix(
-    "Alt Data B Hard Activation 25% Train, 75% Test, Alpha: 0.3", pred, testOut)
+# altb_hard_75, altb_hard_75_train, altb_hard_75_test, altb_hard_75_out, train, test = normalize_and_train_hard(
+#     "Alt B", df_alt_b, 0.3, epsilon_b, max_iterations, .25)
+# altb_hard_25, altb_hard_25_train, altb_hard_25_test, altb_hard_25_out, train, test = normalize_and_train_hard(
+#     "Alt B", df_alt_b, 0.3, epsilon_b, max_iterations, .75)
+# pred, testOut = test_hard(
+#     altb_hard_75, altb_hard_75_test, altb_hard_75_out)
+# graph_results("[Training] Alt Data B Hard Activation 75% Train, 25% Test, Alpha: 0.3",
+#               train, altb_hard_75)
+# graph_results("[Testing] Alt Data B Hard Activation 75% Train, 25% Test, Alpha: 0.3",
+#               test, altb_hard_75)
+# confusion_matrix(
+#     "Alt Data B Hard Activation 75% Train, 25% Test, Alpha: 0.3", pred, testOut)
+# pred, testOut = test_hard(
+#     altb_hard_25, altb_hard_25_test, altb_hard_25_out)
+# graph_results("[Training] Alt Data B Hard Activation 25% Train, 75% Test, Alpha: 0.3",
+#               train, altb_hard_25)
+# graph_results("[Testing] Alt Data B Hard Activation 25% Train, 75% Test, Alpha: 0.3",
+#               test, altb_hard_25)
+# confusion_matrix(
+#     "Alt Data B Hard Activation 25% Train, 75% Test, Alpha: 0.3", pred, testOut)
 
 altc_hard_75, altc_hard_75_train, altc_hard_75_test, altc_hard_75_out, train, test = normalize_and_train_hard(
     "Alt C", alt_c_25, alt_c_75, 0.3, epsilon_c, max_iterations, .25)
@@ -526,47 +526,47 @@ graph_results("[Testing] Alt Data C Hard Activation 25% Train, 75% Test, Alpha: 
 confusion_matrix(
     "Alt Data C Hard Activation 25% Train, 75% Test, Alpha: 0.3", pred, testOut)
 
-alta_soft_75, alta_soft_75_train, alta_soft_75_test, alta_soft_75_out, gainA_75, train, test = normalize_and_train_soft(
-    "AltA", df_alt_a, 0.3, epsilon_a, max_iterations, .2, .25)
-alta_soft_25, alta_soft_25_train, alta_soft_25_test, alta_soft_25_out, gainB_25, train, test = normalize_and_train_soft(
-    "AltA", df_alt_a, 0.3, epsilon_a, max_iterations, .2, .75)
-pred, testOut = test_soft(
-    alta_soft_75, alta_soft_75_test, alta_soft_75_out, gainA_75)
-graph_results("[Training] Alt Data A Soft Activation 75% Train, 25% Test, Alpha: 0.3, Gain: 0.2",
-              train, alta_soft_75)
-graph_results("[Testing] Alt Data A Soft Activation 75% Train, 25% Test, Alpha: 0.3, Gain: 0.2",
-              test, alta_soft_75)
-confusion_matrix(
-    "Alt Data A Soft Activation 75% Train, 25% Test, Alpha: 0.3, Gain: 0.2", pred, testOut)
-pred, testOut = test_soft(
-    alta_soft_25, alta_soft_25_test, alta_soft_25_out, gainB_25)
-graph_results("[Training] Alt Data A Soft Activation 25% Train, 75% Test, Alpha: 0.3, Gain: 0.2",
-              train, alta_soft_25)
-graph_results("[Testing] Alt Data A Soft Activation 25% Train, 75% Test, Alpha: 0.3, Gain: 0.2",
-              test, alta_soft_25)
-confusion_matrix(
-    "Alt Data A Soft Activation 25% Train, 75% Test, Alpha: 0.3, Gain: 0.2", pred, testOut)
+# alta_soft_75, alta_soft_75_train, alta_soft_75_test, alta_soft_75_out, gainA_75, train, test = normalize_and_train_soft(
+#     "AltA", df_alt_a, 0.3, epsilon_a, max_iterations, .2, .25)
+# alta_soft_25, alta_soft_25_train, alta_soft_25_test, alta_soft_25_out, gainB_25, train, test = normalize_and_train_soft(
+#     "AltA", df_alt_a, 0.3, epsilon_a, max_iterations, .2, .75)
+# pred, testOut = test_soft(
+#     alta_soft_75, alta_soft_75_test, alta_soft_75_out, gainA_75)
+# graph_results("[Training] Alt Data A Soft Activation 75% Train, 25% Test, Alpha: 0.3, Gain: 0.2",
+#               train, alta_soft_75)
+# graph_results("[Testing] Alt Data A Soft Activation 75% Train, 25% Test, Alpha: 0.3, Gain: 0.2",
+#               test, alta_soft_75)
+# confusion_matrix(
+#     "Alt Data A Soft Activation 75% Train, 25% Test, Alpha: 0.3, Gain: 0.2", pred, testOut)
+# pred, testOut = test_soft(
+#     alta_soft_25, alta_soft_25_test, alta_soft_25_out, gainB_25)
+# graph_results("[Training] Alt Data A Soft Activation 25% Train, 75% Test, Alpha: 0.3, Gain: 0.2",
+#               train, alta_soft_25)
+# graph_results("[Testing] Alt Data A Soft Activation 25% Train, 75% Test, Alpha: 0.3, Gain: 0.2",
+#               test, alta_soft_25)
+# confusion_matrix(
+#     "Alt Data A Soft Activation 25% Train, 75% Test, Alpha: 0.3, Gain: 0.2", pred, testOut)
 
-altb_soft_75, altb_soft_75_train, altb_soft_75_test, altb_soft_75_out, gainB_75, train, test = normalize_and_train_soft(
-    "AltB", df_alt_b, 0.3, epsilon_b, max_iterations, .2, .25)
-altb_soft_25, altb_soft_25_train, altb_soft_25_test, altb_soft_25_out, gainB_25, train, test = normalize_and_train_soft(
-    "AltB", df_alt_b, 0.3, epsilon_b, max_iterations, .2, .75)
-pred, testOut = test_soft(
-    altb_soft_75, altb_soft_75_test, altb_soft_75_out, gainB_75)
-graph_results("[Training] Alt Data B Soft Activation 75% Train, 25% Test, Alpha: 0.3, Gain: 0.2",
-              train, altb_soft_75)
-graph_results("[Testing] Alt Data B Soft Activation 75% Train, 25% Test, Alpha: 0.3, Gain: 0.2",
-              test, altb_soft_75)
-confusion_matrix(
-    "Alt Data B Soft Activation 75% Train, 25% Test, Alpha: 0.3, Gain: 0.2", pred, testOut)
-pred, testOut = test_soft(
-    altb_soft_25, altb_soft_25_test, altb_soft_25_out, gainB_25)
-graph_results("[Training] Alt Data B Soft Activation 25% Train, 25% Test, Alpha: 0.3, Gain: 0.2",
-              train, altb_soft_25)
-graph_results("[Testing] Alt Data B Soft Activation 25% Train, 25% Test, Alpha: 0.3, Gain: 0.2",
-              test, altb_soft_25)
-confusion_matrix(
-    "Alt Data B Soft Activation 25% Train, 75% Test, Alpha: 0.3, Gain: 0.2", pred, testOut)
+# altb_soft_75, altb_soft_75_train, altb_soft_75_test, altb_soft_75_out, gainB_75, train, test = normalize_and_train_soft(
+#     "AltB", df_alt_b, 0.3, epsilon_b, max_iterations, .2, .25)
+# altb_soft_25, altb_soft_25_train, altb_soft_25_test, altb_soft_25_out, gainB_25, train, test = normalize_and_train_soft(
+#     "AltB", df_alt_b, 0.3, epsilon_b, max_iterations, .2, .75)
+# pred, testOut = test_soft(
+#     altb_soft_75, altb_soft_75_test, altb_soft_75_out, gainB_75)
+# graph_results("[Training] Alt Data B Soft Activation 75% Train, 25% Test, Alpha: 0.3, Gain: 0.2",
+#               train, altb_soft_75)
+# graph_results("[Testing] Alt Data B Soft Activation 75% Train, 25% Test, Alpha: 0.3, Gain: 0.2",
+#               test, altb_soft_75)
+# confusion_matrix(
+#     "Alt Data B Soft Activation 75% Train, 25% Test, Alpha: 0.3, Gain: 0.2", pred, testOut)
+# pred, testOut = test_soft(
+#     altb_soft_25, altb_soft_25_test, altb_soft_25_out, gainB_25)
+# graph_results("[Training] Alt Data B Soft Activation 25% Train, 25% Test, Alpha: 0.3, Gain: 0.2",
+#               train, altb_soft_25)
+# graph_results("[Testing] Alt Data B Soft Activation 25% Train, 25% Test, Alpha: 0.3, Gain: 0.2",
+#               test, altb_soft_25)
+# confusion_matrix(
+#     "Alt Data B Soft Activation 25% Train, 75% Test, Alpha: 0.3, Gain: 0.2", pred, testOut)
 
 altc_soft_75, altc_soft_75_train, altc_soft_75_test, altc_soft_75_out, gainC_75, train, test = normalize_and_train_soft(
     "AltC", alt_c_25, alt_c_75, 0.3, epsilon_c, max_iterations, .2, .25)
