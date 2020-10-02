@@ -15,21 +15,24 @@ accuracy: 71.700000, tp_perc: 75.941423, fp_perc: 32.183908, tn_perc: 67.816092,
 accuracy: 59.033333, tp_perc: 87.624750, fp_perc: 69.672679, tn_perc: 30.327321, fn_perc: 12.375250, error: 40.966667
 
 Alpha: 0.3
-need c hard 
+GroupC Final Weights: [-0.33812849337547235, 0.5507490639910401, 0.051989542225458596] Train_Error: 1480.000000
+need 25 c
+accuracy: 47.600000, tp_perc: 10.364683, fp_perc: 11.899791, tn_perc: 88.100209, fn_perc: 89.635317, error: 52.400000
+need 25 c
 
 Group Dataset Soft:
 
 Alpha: 0.3 Gain 0.2
-GroupA Final Weights: [106.12142795803501, 112.25965253867578, -107.94736785870768] Train_Error: 0.000110
-GroupA Final Weights: [126.12338507592995, 127.66393874678386, -122.63536180709536] Train_Error: 0.000119
+GroupA Final Weights: [125.30362481391185, 126.71796227044051, -122.01338686113498] Train_Error: 0.000120
+GroupA Final Weights: [108.91162701604888, 113.00889607070144, -107.98646820638224] Train_Error: 0.000253
 accuracy: 100.000000, tp_perc: 100.000000, fp_perc: 0.000000, tn_perc: 100.000000, fn_perc: 0.000000, error: 0.000000
 accuracy: 100.000000, tp_perc: 100.000000, fp_perc: 0.000000, tn_perc: 100.000000, fn_perc: 0.000000, error: 0.000000
 
 Alpha: 0.3 Gain 0.2
-GroupB Final Weights: [19.14464807099878, 17.571477123130933, -17.079340211397792] Train_Error: 178.653065
-GroupB Final Weights: [18.598329536834232, 16.953331332939555, -16.890399813755728] Train_Error: 546.125273
-accuracy: 72.800000, tp_perc: 70.151216, fp_perc: 24.475997, tn_perc: 75.524003, fn_perc: 29.848784, error: 27.200000
-accuracy: 72.400000, tp_perc: 72.038835, fp_perc: 27.216495, tn_perc: 72.783505, fn_perc: 27.961165, error: 27.600000
+GroupB Final Weights: [18.60624647151617, 15.386786882731505, -17.164082031865338] Train_Error: 549.055534
+GroupB Final Weights: [17.861264559803335, 18.636073048641165, -17.709707240813803] Train_Error: 175.568164
+accuracy: 72.100000, tp_perc: 79.457364, fp_perc: 35.743802, tn_perc: 64.256198, fn_perc: 20.542636, error: 27.900000
+accuracy: 71.866667, tp_perc: 72.579553, fp_perc: 28.824688, tn_perc: 71.175312, fn_perc: 27.420447, error: 28.133333
 
 Alpha: 0.1 Gain 0.1
 need 75
@@ -40,22 +43,22 @@ accuracy: 53.000000, tp_perc: 47.117296, fp_perc: 41.046278, tn_perc: 58.953722,
 Alt Data Hard:
 
 Alpha: 0.3 Gain 0.2
-Need alt 75 hard
-Alt A Final Weights: [-0.5678909257462491, -0.022663392843684904, 0.28037139731799315] Train_Error: 0.000000
-need alt 75 hard
+Alt A Final Weights: [-0.4269650202756431, -0.3831708357682188, 0.36703896716321943] Train_Error: 0.000000
+Alt A Final Weights: [-0.1736169765096599, -0.704762841488465, 0.4701506190385322] Train_Error: 0.000000
+accuracy: 100.000000, tp_perc: 100.000000, fp_perc: 0.000000, tn_perc: 100.000000, fn_perc: 0.000000, error: 0.000000
 accuracy: 100.000000, tp_perc: 100.000000, fp_perc: 0.000000, tn_perc: 100.000000, fn_perc: 0.000000, error: 0.000000
 
 Alpha: 0.3 Gain 0.2
-Need alt b 75
-Alt B Final Weights: [-2.221611602217239, -2.2330590855736894, 2.0035856489505965] Train_Error: 87.000000
-need alt b 75
-accuracy: 95.500000, tp_perc: 100.000000, fp_perc: 9.127789, tn_perc: 90.872211, fn_perc: 0.000000, error: 4.500000
+Alt B Final Weights: [-2.1238536501707754, -2.327942545864905, 2.2430189205486144] Train_Error: 85.000000
+Alt B Final Weights: [-1.0514354152191694, -1.3098381602582156, 1.0776228068917932] Train_Error: 52.000000
+accuracy: 99.200000, tp_perc: 98.973306, fp_perc: 0.584795, tn_perc: 99.415205, fn_perc: 1.026694, error: 0.800000
+accuracy: 96.466667, tp_perc: 99.801718, fp_perc: 6.926698, tn_perc: 93.073302, fn_perc: 0.198282, error: 3.533333
 
 Alpha: 0.3 Gain 0.2
-Alt C Final Weights: [-1.5795565944056686, -0.5409253698844256, 1.2815290513181705]
-Alt C Final Weights: [-1.161465506464224, -0.6734656474701356, 0.8714659137096965]
-accuracy: 64.100000, tp_perc: 33.467742, fp_perc: 5.753968, tn_perc: 94.246032, fn_perc: 66.532258
-accuracy: 72.133333, tp_perc: 80.107167, fp_perc: 35.766423, tn_perc: 64.233577, fn_perc: 19.892833
+Alt C Final Weights: [-1.324182041139905, -0.6589953153146119, 0.9144595671644971] Train_Error: 1101.000000
+Alt C Final Weights: [-1.1974094212192592, -1.1031662078708513, 0.7835477834767444] Train_Error: 383.000000
+accuracy: 71.700000, tp_perc: 83.983573, fp_perc: 39.961014, tn_perc: 60.038986, fn_perc: 16.016427, error: 28.300000
+accuracy: 57.300000, tp_perc: 98.479841, fp_perc: 84.599866, tn_perc: 15.400134, fn_perc: 1.520159, error: 42.700000
 
 Alt Data Soft:
 
