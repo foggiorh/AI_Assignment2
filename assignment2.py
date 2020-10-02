@@ -155,13 +155,17 @@ def get_percent_train_and_test(input, output, percentage):
     return (percInput, percOutput, percTestIn, percTestOut)
 
 
-def get_random_sample(data, percent):
+def get_random_sample(data, percent, name):
     train, test = train_test_split(data, test_size=percent, shuffle=True)
+    train.to_csv('splits/' + name + str(1 - percent), index = False)
+    test.to_csv('splits/' + name + str(percent), index = False)
     train_in = get_input_array(train)
     train_out = get_desired_out_array(train)
     test_in = get_input_array(test)
     test_out = get_desired_out_array(test)
     return train, test, train_in, train_out, test_in, test_out
+
+get_random_sample(df_c, 0.75, 'c_')
 
 
 def normalize_and_train_hard(dataset_name, data, alpha, epsilon, max_iterations, perc):
@@ -306,7 +310,6 @@ def confusion_matrix(title, predicted, actual):
     # plt.savefig(filename)
     # plt.close()
 
-
 # groupa_hard_75, groupa_hard_75_train, groupa_hard_75_test, groupa_hard_75_out, train, test = normalize_and_train_hard(
 #     "Group A", df_a, 0.3, epsilon_a, max_iterations, .25)
 # groupa_hard_25, groupa_hard_25_train, groupa_hard_25_test, groupa_hard_25_out, train, test = normalize_and_train_hard(
@@ -369,7 +372,6 @@ graph_results("[Testing] Group C Hard Activation 25% Train, 75% Test, Alpha: 0.3
               test, groupc_hard_25)
 confusion_matrix(
     "Group C Hard Activation 25% Train, 75% Test, Alpha: 0.3", pred, testOut)
-
 
 # groupa_soft_75, groupa_soft_75_train, groupa_soft_75_test, groupa_soft_75_out, gainA_75, train, test = normalize_and_train_soft(
 #     "GroupA", df_a, 0.3, epsilon_a, max_iterations, .2, .25)
@@ -497,7 +499,6 @@ graph_results("[Testing] Alt Data C Hard Activation 25% Train, 75% Test, Alpha: 
 confusion_matrix(
     "Alt Data C Hard Activation 25% Train, 75% Test, Alpha: 0.3", pred, testOut)
 
-
 alta_soft_75, alta_soft_75_train, alta_soft_75_test, alta_soft_75_out, gainA_75, train, test = normalize_and_train_soft(
     "AltA", df_alt_a, 0.3, epsilon_a, max_iterations, .2, .25)
 alta_soft_25, alta_soft_25_train, alta_soft_25_test, alta_soft_25_out, gainB_25, train, test = normalize_and_train_soft(
@@ -560,3 +561,4 @@ graph_results("[Testing] Alt Data C Soft Activation 25% Train, 25% Test, Alpha: 
               test, altc_soft_25)
 confusion_matrix(
     "Alt Data C Soft Activation 25% Train, 75% Test, Alpha: 0.3, Gain: 0.2", pred, testOut)
+
